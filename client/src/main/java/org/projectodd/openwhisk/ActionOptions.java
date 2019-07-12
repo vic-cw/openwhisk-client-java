@@ -99,6 +99,11 @@ public class ActionOptions {
         return this;
     }
 
+    public ActionOptions timeout(final int timeoutLimit) {
+        actionPut.getLimits().timeout(timeoutLimit);
+        return this;
+    }
+
     private void putSecurityAnnotation(final long key) {
         webSecureKey = key;
         putAnnotation("require-whisk-auth", key);
